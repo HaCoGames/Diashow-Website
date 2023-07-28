@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/uploadMain.css">
+    <title>Upload Images</title>
+</head>
+<body>
+    <button id="home-button" onclick="window.location.href='/';">Home</button>
+    <button id="upload-button">Upload</button>
+    <br>
+    <div id="context-menu" hidden>
+        <menu>
+            <button id="hide" class="entry">Delete</button>
+        </menu>
+    </div>
+    <div id="dataContainer">
+        
+    </div>
+    <div id="upload-box">
+        <button id="close-button">X</button>
+        <form class="box" method="post" action="" enctype="multipart/form-data" style="height: 100%; width: 100%;">
+            <div class="box__input">
+              <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+              <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+              <button class="box__button" type="submit">Upload</button>
+            </div>
+            <div class="box__uploading">Uploading…</div>
+            <div class="box__success">Done!</div>
+            <div class="box__error">Error! <span></span>.</div>
+        </form>
+    </div>
+    <script src="./js/uploadMain.js"></script>
+</body>
+</html>

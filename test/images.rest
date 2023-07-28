@@ -1,11 +1,17 @@
 ### test happy flow:
-GET http://localhost:3000/api/images
+GET http://localhost:8080/api/images
 
 ### test getImage test happy flow:
-GET http://localhost:3000/api/image/test.png
+GET http://localhost:8080/api/image/test.png
 
 ### test image does not exist:
-GET http://localhost:3000/api/image/not-exist.png
+GET http://localhost:8080/api/image/not-exist.png
 
 ### test image wrong format:
-GET http://localhost:3000/api/image/wrong-format.txt
+GET http://localhost:8080/api/image/wrong-format.txt
+
+### test PUT image
+PUT http://localhost:8080/api/image/testing.png 
+Content-Type: image/png
+
+JOJO.png

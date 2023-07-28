@@ -1,0 +1,81 @@
+#dataContainer {
+    display: block;
+}
+
+.imageContainer {
+    border: solid gray 1px;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.imageContainer:hover{
+    background-color: lightgray;
+}
+
+#upload-box {
+    border: solid gray 1px;
+    border-radius: 3px;
+
+    background-color: azure;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    width: 300px;
+    height: 300px;
+
+    z-index: 1;
+
+    display: none;
+}
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+.box.is-dragover {
+    border: dotted black 2px;
+    background-color: yellow;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#context-menu {
+    position: fixed;
+    background-color: #fff;
+    border-radius: 7px;
+    border: solid lightgray 1px;
+}
+
+#context-menu button {
+    width: 100%;
+    color: #333;
+    background-color: #fff;
+    border: none;
+    border-bottom: #333 1px solid;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#context-menu menu {
+    margin: 0%;
+    padding: 0%;
+}

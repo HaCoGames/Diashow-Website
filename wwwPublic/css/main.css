@@ -32,3 +32,14 @@ img {
     border: none;
     cursor: pointer;
 }
+
+#upload-button {
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
