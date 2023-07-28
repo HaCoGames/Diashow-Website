@@ -1,0 +1,11 @@
+### test happy flow:
+GET http://localhost:3000/api/images
+
+### test getImage test happy flow:
+GET http://localhost:3000/api/image/test.png
+
+### test image does not exist:
+GET http://localhost:3000/api/image/not-exist.png
+
+### test image wrong format:
+GET http://localhost:3000/api/image/wrong-format.txt

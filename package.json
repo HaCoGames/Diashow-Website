@@ -1,0 +1,23 @@
+{
+  "name": "diashow-website",
+  "version": "1.0.0",
+  "description": "A software that hosts a website on which you can display images as a diashow.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaCoGames/Diashow-Website.git"
+  },
+  "author": "peter@hafnerp.dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaCoGames/Diashow-Website/issues"
+  },
+  "homepage": "https://github.com/HaCoGames/Diashow-Website#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
