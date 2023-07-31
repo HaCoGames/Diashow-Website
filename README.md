@@ -13,7 +13,7 @@ This is a website that displays images, which you can upload.
 ## Usage
 
 1. Navigate to `localhost:8080` (or the port you choose as an environment variable or in the config file), and the images will be displayed.
-2. Upload an image via the upload page (accessible through a button).
+2. Upload an image via the upload page (accessible through a button). -> Not implemented yet. Look at upload-Implementation branch!
 
 ## Author
 
