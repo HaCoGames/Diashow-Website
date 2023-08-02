@@ -20,9 +20,9 @@
     </div>
     <div id="upload-box">
         <button id="close-button">X</button>
-        <form class="box" method="post" action="" enctype="multipart/form-data" style="height: 100%; width: 100%;">
+        <form id="upload-form" class="box" style="height: 100%; width: 100%;">
             <div class="box__input">
-              <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+              <input accept="*.jpg, *.png" class="box__file" type="file" name="files[]" id="file" multiple />
               <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
               <button class="box__button" type="submit">Upload</button>
             </div>

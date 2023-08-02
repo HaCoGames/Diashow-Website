@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'wwwPublic')));
 
 app.get(`${API_PREFIX}/image/:id`, images.get);
 app.get(`${API_PREFIX}/images`, images.available);
-app.put(`${API_PREFIX}/image/:id`, images.put);
+app.post(`${API_PREFIX}/image`, images.post);
 
 app.listen(port, () => {
     console.log('Server running on port ' + port);

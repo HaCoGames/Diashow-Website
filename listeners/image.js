@@ -45,20 +45,24 @@ const getAvailableImages = function (_req, res) {
     res.status(200).send(availableImages);
 }
 
-const putImage = function (req, res) {
+const postImage = function (req, res) {
+    /*
     let dataDir = path.join(__dirname, '../data/images');
-    let fileDirectory = path.join(dataDir, req.params.id);
+    let fileDirectory = path.join(dataDir, new Date().getUTCDate(), '.png');
     let fileExtension = fileDirectory.split('.').pop();
 
     if (typeof req.params.id === typeof "STRING") return res.status(400).send({error: `The passed string is not for an image!`, fix: `Please pass a string with an ${Object.keys(imageExtensionHeaderDictionary).join(" or ")}  extension.`});
     if (req.body == undefined) return res.status(400).send({error: `The content is no image!`, fix: `PLease pass an image!`});
 
     fs.writeFileSync(fileDirectory, req.body);
-    res.status(200).send({message: `The image has been uploaded successfully!`});
+    res.status(200).send({message: `The image has been uploaded successfully!`});*/
+    console.log(req.body);
+    console.log(req.files);
+    res.status(202).send(req.files);
 }
 
 module.exports = {
     get : getImage,
     available: getAvailableImages,
-    put: putImage,
+    post: postImage,
 }
