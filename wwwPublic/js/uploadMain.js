@@ -72,22 +72,3 @@ document.addEventListener('keyup', (e) => {
         menu.setAttribute('hidden','true');
     }
 });
-
-//--------------------------------------------------------------------------------------------------->
-//File upload function 
-document.getElementById("upload-form").addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    let userFiles = document.getElementById("file").files;
-    let formData = new FormData();
-    for (let file of userFiles) {
-        formData.append(`${new Date().getUTCDate()}`, file);
-        formData.append('commet', "comment");
-        console.log(file);
-    }
-    console.log(formData.toString());
-    fetch('/api/image', {
-        method: 'POST',
-        body: "stfu",
-    });
-})

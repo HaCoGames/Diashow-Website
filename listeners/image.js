@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 
 const config = require('../config');
 
@@ -46,19 +47,32 @@ const getAvailableImages = function (_req, res) {
 }
 
 const postImage = function (req, res) {
-    /*
-    let dataDir = path.join(__dirname, '../data/images');
-    let fileDirectory = path.join(dataDir, new Date().getUTCDate(), '.png');
-    let fileExtension = fileDirectory.split('.').pop();
+    const tempPath = req.file.path;
+    const targetPath = path.join(__dirname, `./data/images/image_${new Date().getUTCDate()}.png`);
 
-    if (typeof req.params.id === typeof "STRING") return res.status(400).send({error: `The passed string is not for an image!`, fix: `Please pass a string with an ${Object.keys(imageExtensionHeaderDictionary).join(" or ")}  extension.`});
-    if (req.body == undefined) return res.status(400).send({error: `The content is no image!`, fix: `PLease pass an image!`});
+    if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+        fs.rename(tempPath, targetPath, err => {
+            if (err) return handleError(err, res);
 
-    fs.writeFileSync(fileDirectory, req.body);
-    res.status(200).send({message: `The image has been uploaded successfully!`});*/
-    console.log(req.body);
-    console.log(req.files);
-    res.status(202).send(req.files);
+            res
+            .status(200)
+            .contentType("text/plain")
+            .end("File uploaded!");
+        });
+    } else {
+        fs.unlink(tempPath, err => {
+            if (err) return handleError(err, res);
+
+            res
+            .status(403)
+            .contentType("text/plain")
+            .end("Only .png files are allowed!");
+        });
+    }
+}
+
+function handleError(err, res) {
+    res.status(500).send({error: err});
 }
 
 module.exports = {

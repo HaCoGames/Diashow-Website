@@ -21,14 +21,9 @@
     <div id="upload-box">
         <button id="close-button">X</button>
         <form id="upload-form" class="box" style="height: 100%; width: 100%;">
-            <div class="box__input">
-              <input accept="*.jpg, *.png" class="box__file" type="file" name="files[]" id="file" multiple />
-              <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-              <button class="box__button" type="submit">Upload</button>
-            </div>
-            <div class="box__uploading">Uploading…</div>
-            <div class="box__success">Done!</div>
-            <div class="box__error">Error! <span></span>.</div>
+        <form method="post" enctype="multipart/form-data" action="/api/image">
+            <input type="file" name="file">
+            <input type="submit" value="Submit">
         </form>
     </div>
     <script src="./js/uploadMain.js"></script>
