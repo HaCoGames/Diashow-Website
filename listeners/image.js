@@ -9,6 +9,13 @@ const imageExtensionHeaderDictionary = {
     'jpg': 'image/jpeg',
 };
 
+
+/**
+ * Handles the incomming requests for an image.
+ * @param {*} req 
+ * @param {*} res 
+ * @returns The code of the res.send() method.
+ */
 const getImage = function (req, res) {
     let parameter = req.params;
     let dataDir = path.join(__dirname, '..', config.dataDir);
@@ -34,6 +41,9 @@ const getImage = function (req, res) {
     else return res.status(404).send("The Image you requested does not exist!");
 }
 
+/**
+ * Gets all available images.
+ */
 const getAvailableImages = function (_req, res) {
     let dataDir = path.join(__dirname, '../data/images');
     let files = fs.readdirSync(dataDir);
@@ -47,28 +57,7 @@ const getAvailableImages = function (_req, res) {
 }
 
 const postImage = function (req, res) {
-    const tempPath = req.file.path;
-    const targetPath = path.join(__dirname, `./data/images/image_${new Date().getUTCDate()}.png`);
-
-    if (path.extname(req.file.originalname).toLowerCase() === ".png") {
-        fs.rename(tempPath, targetPath, err => {
-            if (err) return handleError(err, res);
-
-            res
-            .status(200)
-            .contentType("text/plain")
-            .end("File uploaded!");
-        });
-    } else {
-        fs.unlink(tempPath, err => {
-            if (err) return handleError(err, res);
-
-            res
-            .status(403)
-            .contentType("text/plain")
-            .end("Only .png files are allowed!");
-        });
-    }
+    return res.status(501).send({error: "This endpoint is not implemented yet!"});
 }
 
 function handleError(err, res) {
